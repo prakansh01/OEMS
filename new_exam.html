@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create New Exam</title>
+    <style>
+      /* General Styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      /* Form Container */
+      .form-container {
+        background-color: white;
+        padding: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        width: 600px;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      /* Form Table Styles */
+      .form-table {
+        width: 100%;
+      }
+
+      .form-table td {
+        padding: 10px;
+      }
+
+      .form-table label {
+        font-weight: bold;
+        display: block;
+      }
+
+      .form-table input,
+      .form-table textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      /* Button Styles */
+      .pagination-buttons {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        background-color: #5cb85c;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #4cae4c;
+      }
+
+      /* Hide previous button on first section */
+      #prevBtn {
+        display: none;
+      }
+
+      .submit-button input {
+        width: 100%;
+        background-color: #5cb85c;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .submit-button input:hover {
+        background-color: #4cae4c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Create New Exam</h2>
+      <form action="new_exam.php" method="post" id="examForm">
+        <table class="form-table" id="form-section-1">
+          <tr>
+            <td><label for="subject">Subject of the Exam:</label></td>
+            <td><input type="text" id="subject" name="subject" required /></td>
+          </tr>
+          <tr>
+            <td><label for="questions">No. of Questions:</label></td>
+            <td>
+              <input type="number" id="questions" name="questions" required />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="marks_correct">Marks for each Correct Answer:</label>
+            </td>
+            <td>
+              <input
+                type="number"
+                id="marks_correct"
+                name="marks_correct"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="marks_wrong">Marks for each Wrong Answer:</label>
+            </td>
+            <td>
+              <input
+                type="number"
+                id="marks_wrong"
+                name="marks_wrong"
+                required
+              />
+            </td>
+          </tr>
+        </table>
+
+        <table class="form-table" id="form-section-2" style="display: none">
+          <tr>
+            <td>
+              <label for="marks_unattempted"
+                >Marks for Non-Attempted Question:</label
+              >
+            </td>
+            <td>
+              <input
+                type="number"
+                id="marks_unattempted"
+                name="marks_unattempted"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="duration">Duration of the Exam:</label></td>
+            <td>
+              <input type="text" id="duration" name="duration" required />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="reg_start">Registration Start Date and Time:</label>
+            </td>
+            <td>
+              <input
+                type="datetime-local"
+                id="reg_start"
+                name="reg_start"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="reg_end">Registration End Date and Time:</label>
+            </td>
+            <td>
+              <input
+                type="datetime-local"
+                id="reg_end"
+                name="reg_end"
+                required
+              />
+            </td>
+          </tr>
+        </table>
+
+        <table class="form-table" id="form-section-3" style="display: none">
+          <tr>
+            <td>
+              <label for="admit_card_issue"
+                >Admit Card Issue Date and Time:</label
+              >
+            </td>
+            <td>
+              <input
+                type="datetime-local"
+                id="admit_card_issue"
+                name="admit_card_issue"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="admit_card_expire"
+                >Admit Card Expiry Date and Time:</label
+              >
+            </td>
+            <td>
+              <input
+                type="datetime-local"
+                id="admit_card_expire"
+                name="admit_card_expire"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="exam_start">Exam Start Date and Time:</label></td>
+            <td>
+              <input
+                type="datetime-local"
+                id="exam_start"
+                name="exam_start"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="exam_end">Exam End Date and Time:</label></td>
+            <td>
+              <input
+                type="datetime-local"
+                id="exam_end"
+                name="exam_end"
+                required
+              />
+            </td>
+          </tr>
+        </table>
+
+        <table class="form-table" id="form-section-4" style="display: none">
+          <tr>
+            <td><label for="teacher_name">Teacher Name:</label></td>
+            <td>
+              <input
+                type="text"
+                id="teacher_name"
+                name="teacher_name"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="teacher_id">Teacher ID:</label></td>
+            <td>
+              <input type="text" id="teacher_id" name="teacher_id" required />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="venue">Venue/Room of the Exam:</label></td>
+            <td><input type="text" id="venue" name="venue" required /></td>
+          </tr>
+          <tr>
+            <td><label for="student_code">Student Code:</label></td>
+            <td>
+              <input
+                type="text"
+                id="student_code"
+                name="student_code"
+                required
+              />
+            </td>
+          </tr>
+        </table>
+
+        <table class="form-table" id="form-section-5" style="display: none">
+          <tr>
+            <td><label for="max_students">Max Allowed Students:</label></td>
+            <td>
+              <input
+                type="number"
+                id="max_students"
+                name="max_students"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="syllabus">Syllabus Description:</label></td>
+            <td>
+              <textarea
+                id="syllabus"
+                name="syllabus"
+                rows="4"
+                required
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="extra_1">Extra 1:</label></td>
+            <td><input type="text" id="extra_1" name="extra_1" /></td>
+          </tr>
+          <tr>
+            <td><label for="extra_2">Extra 2:</label></td>
+            <td><input type="text" id="extra_2" name="extra_2" /></td>
+          </tr>
+        </table>
+
+        <div class="pagination-buttons">
+          <button type="button" id="prevBtn" onclick="changeSection(-1)">
+            Previous
+          </button>
+          <button type="button" id="nextBtn" onclick="changeSection(1)">
+            Next
+          </button>
+        </div>
+        <div class="submit-button" style="display: none">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+
+    <script>
+      let currentSection = 1;
+      showSection(currentSection);
+
+      function showSection(n) {
+        const sections = document.querySelectorAll(".form-table");
+        sections.forEach((section, index) => {
+          section.style.display = index === n - 1 ? "table" : "none";
+        });
+
+        // Hide/show buttons
+        document.getElementById("prevBtn").style.display =
+          n === 1 ? "none" : "inline";
+        if (n === sections.length) {
+          document.getElementById("nextBtn").style.display = "none";
+          document.querySelector(".submit-button").style.display = "block";
+        } else {
+          document.getElementById("nextBtn").style.display = "inline";
+          document.querySelector(".submit-button").style.display = "none";
+        }
+      }
+
+      function changeSection(n) {
+        const sections = document.querySelectorAll(".form-table");
+        currentSection += n;
+
+        if (currentSection < 1) {
+          currentSection = 1;
+        }
+        if (currentSection > sections.length) {
+          currentSection = sections.length;
+        }
+
+        showSection(currentSection);
+      }
+    </script>
+  </body>
+</html>

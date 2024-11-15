@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Navbar Styling */
+      .navbar {
+        background-color: #333;
+        color: white;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar .logo {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .navbar .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .navbar .nav-links li {
+        display: inline;
+      }
+
+      .navbar .nav-links li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+
+      .navbar .nav-links li a:hover {
+        background-color: #5cb85c;
+      }
+
+      /* Content Section */
+      .content {
+        padding-top: 40px;
+        text-align: center;
+      }
+
+      .content h2 {
+        margin-bottom: 30px;
+        font-size: 28px;
+        color: #333;
+        border-bottom: 2px solid #5cb85c;
+        display: inline-block;
+      }
+
+      /* Accordion Container */
+      .accordion-container {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .accordion {
+        background-color: #f7f7f7;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .accordion-header {
+        padding: 15px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        background-color: #5cb85c;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .accordion-header:hover {
+        background-color: #4cae4c;
+      }
+
+      .accordion-body {
+        display: none;
+        padding: 20px;
+        background-color: white;
+        color: #555;
+      }
+
+      /* Free Space */
+      .empty{
+        margin-top: 40px;
+        height: 700px;
+        width: 100%;
+      }
+
+
+
+      /* Footer */
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+        margin-top: 20px;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      footer .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      footer .footer-content div {
+        margin-bottom: 15px;
+      }
+
+      footer .footer-content h4 {
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      footer .footer-content ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      footer .footer-content ul li {
+        margin-bottom: 10px;
+      }
+
+      footer .footer-content ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1em;
+      }
+
+      footer .footer-content ul li a:hover {
+        color: #ddd;
+      }
+
+      footer .social-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      footer .social-icons a {
+        color: white;
+        font-size: 1.5em;
+        margin: 0 15px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      footer .social-icons a:hover {
+        color: #6a11cb;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .accordion-container {
+          width: 100%;
+        }
+
+        .navbar .nav-links li a {
+          padding: 8px 12px;
+        }
+
+        footer .footer-content {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo">Admin Dashboard</div>
+      <ul class="nav-links">
+        <li><a href="new_exam.html">+ New</a></li>
+        <li><a href="#">Past Exams</a></li>
+      </ul>
+    </nav>
+
+    <!-- Ongoing Exams Section -->
+    <div class="content">
+      <h2>Ongoing Exams</h2>
+      <div class="accordion-container">
+        <!-- Dynamic Exam Cards (to be populated from MySQL) -->
+        <div class="accordion">
+          <div class="accordion-header">Exam 1 - Mathematics</div>
+          <div class="accordion-body">
+            <p>Start Time: 2024-11-14 08:00:00</p>
+            <p>End Time: 2024-11-14 18:00:00</p>
+            <p>Description: Final year Mathematics exam</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">Exam 2 - Physics</div>
+          <div class="accordion-body">
+            <p>Start Time: 2024-11-15 09:00:00</p>
+            <p>End Time: 2024-11-15 12:00:00</p>
+            <p>Description: Mid-term Physics exam</p>
+          </div>
+        </div>
+
+        <!-- Fetch data from MySQL and populate more cards -->
+    </div>
+
+      <div class="empty">Free Space</div>
+      <!-- Footer -->
+      <footer>
+        <div class="footer-content">
+          <div>
+            <h4>Contact Us</h4>
+            <ul>
+              <li><a href="#">Email: support@onlineexam.com</a></li>
+              <li><a href="#">Phone: +123 456 7890</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <p>© 2024 Online Examination Management System. All rights reserved.</p>
+      </footer>
+    
+
+    <script>
+      // Simple Accordion Functionality
+      document.querySelectorAll(".accordion-header").forEach((item) => {
+        item.addEventListener("click", () => {
+          const body = item.nextElementSibling;
+          body.style.display =
+            body.style.display === "block" ? "none" : "block";
+        });
+      });
+    </script>
+  </body>
+</html>

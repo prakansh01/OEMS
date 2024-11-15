@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How It Works | Online Examination Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      header {
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        position: relative;
+      }
+
+      header h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      header p {
+        font-size: 1.2em;
+        margin-bottom: 0;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 50px auto;
+        text-align: center;
+      }
+
+      .section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 50px 0;
+      }
+
+      .section .card {
+        background-color: white;
+        width: 300px;
+        padding: 20px;
+        margin: 15px;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        animation: slideIn 1s ease-out;
+      }
+
+      .section .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .section .card h2 {
+        font-size: 1.8em;
+        color: #6a11cb;
+        margin-bottom: 10px;
+      }
+
+      .section .card p {
+        font-size: 1em;
+        color: #666;
+        margin-bottom: 15px;
+      }
+
+      .section .card a {
+        display: inline-block;
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: background 0.3s ease;
+      }
+
+      .section .card a:hover {
+        background: linear-gradient(to right, #2575fc, #6a11cb);
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .section {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <h1>How It Works</h1>
+      <p>Your step-by-step guide to simplify online examination management</p>
+    </header>
+
+    <!-- Content Section -->
+    <div class="container">
+      <section class="section">
+        <div class="card">
+          <h2>For Admins</h2>
+          <p>Manage exams, teachers, students, and view comprehensive results with ease. You can schedule exams, track performance, and maintain student records.</p>
+          <a href="#">Explore Admin Panel</a>
+        </div>
+        <div class="card">
+          <h2>For Teachers</h2>
+          <p>Create and upload exam papers, grade automatically, and manage student performance. A streamlined interface designed for ease of use.</p>
+          <a href="#">Explore Teacher Tools</a>
+        </div>
+        <div class="card">
+          <h2>For Students</h2>
+          <p>Register, attempt exams online, and receive instant feedback. Access your exam history and review your results anytime.</p>
+          <a href="#">Explore Student Dashboard</a>
+        </div>
+      </section>
+
+      <!-- Dynamic Feature Description -->
+      <section class="section">
+        <div class="card">
+          <h2>Why Choose Us?</h2>
+          <p>Our system simplifies exam management, automates grading, and ensures secure, real-time access for all users. Improve efficiency and reduce paperwork.</p>
+        </div>
+        <div class="card">
+          <h2>Seamless Experience</h2>
+          <p>Enjoy a seamless, intuitive user experience across all devices. With automated processes, focus more on education and less on administration.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>Online Examination Management System &copy; 2024</p>
+    </footer>
+  </body>
+</html>
